@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* body {
+  height: 100vh;
+  background-color: rgb(255, 231, 10);
+  transition: background-color 0.5s ease;
+} */
+/* .donut {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+    inset 10px 10px 20px rgba(255, 255, 255, 0.5),
+    10px 10px 20px rgba(0, 0, 0, 0.2);
+} */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  background-color: #425aa0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.app {
+  font-family: "poppins", sans-serif;
+  width: min(95vw, 500px);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 1.875em;
+}
+.container {
+  padding: 2em 2.5em;
+  background-color: #f6f6f6;
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.214);
+  border-radius: 0.8em;
+}
+#wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 1em;
+}
+#wrapper input {
+  width: 100%;
+  background-color: transparent;
+  color: rgb(117, 115, 106);
+  font-size: 0.9em;
+  border: none;
+  font-size: 1em;
+  border-bottom: 2.2px solid rgb(183, 183, 183);
+  padding: 1em 0.5em;
+}
+#wrapper input:focus {
+  outline: none;
+  border-color: #f99fc8;
+}
+#wrapper button {
+  position: relative;
+  border-radius: 0.5em;
+  font-weight: 500;
+  font-size: 1em;
+  background-color: #ee1d7b;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+#tasks {
+  margin-top: 1em;
+  border-radius: 0.5em;
+  width: 100%;
+  position: relative;
+  padding: 1em 0.5em;
+}
+.task {
+  background-color: rgb(255, 249, 254);
+  padding: 0.8em 1em;
+  display: grid;
+  grid-template-columns: 1fr 8fr 2fr 2fr;
+  gap: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.06);
+  align-items: center;
+  cursor: pointer;
+}
+.task:not(:first-child) {
+  margin-top: 1em;
+}
+.task input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid rgb(203, 202, 195);
+}
+.task input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.task input[type="checkbox"]:checked {
+  background-color: #01217f;
+  border-color: #01217f;
+}
+/* MAKING A CHECKED ICON INSIDE THE CHECKBOX */
+.task input[type="checkbox"]:checked:before {
+  position: absolute;
+  content: "\f00c";
+  color: #f6f6f6;
+  font-size: 0.8em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.task span {
+  font: 0.9em;
+  font-weight: 400;
+  word-break: break-all;
+}
+.task button {
+  color: #f6f6f6;
+  width: 100%;
+  padding: 1em 0;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.edit {
+  background-color: #425aa0;
+}
+.delete {
+  background-color: #ff5a97;
+}
+#pending-tasks span {
+  color: #ff5a97;
+}
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+#error {
+  text-align: center;
+  background-color: white;
+  color: #ee1d7b;
+  margin-top: 1.5em;
+  padding: 1em 0;
+  border-radius: 0.8em;
+  display: none;
+}
