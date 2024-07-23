@@ -4,7 +4,8 @@ const taskContainer = document.getElementById("tasks");
 const error = document.getElementById("error");
 const countValue = document.querySelector(".count-value");
 let taskCount = 0;
-
+/* saveTasksToLocalStorage function gathers all tasks and their states (name and completion status) and stores them in local storage as a JSON string.
+This function is called whenever a task is added, edited, or deleted.*/
 const saveTasksToLocalStorage = () => {
   const tasks = [];
   document.querySelectorAll(".task").forEach((taskElement) => {
@@ -14,7 +15,7 @@ const saveTasksToLocalStorage = () => {
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
-
+/* The loadTasksFromLocalStorage function retrieves the tasks from local storage and recreates the task elements. */
 const loadTasksFromLocalStorage = () => {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks.forEach((task) => {
@@ -28,7 +29,7 @@ const loadTasksFromLocalStorage = () => {
 const displayCount = (taskCount) => {
   countValue.innerHTML = taskCount;
 };
-
+/*The createTaskElement function creates a task element with the given name and completion status and sets up the event listeners for the edit and delete buttons as well as the checkbox. */
 const createTaskElement = (taskName, isCompleted) => {
   const task = document.createElement("div");
   task.classList.add("task");
